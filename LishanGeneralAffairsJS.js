@@ -116,13 +116,14 @@ function delRow() { //刪除末列
 	}).done(function (data) {
 		console.log(data);
 		BackResult = data;
-		var cText = document.createTextNode(BackResult.feed.entry[4]['gs$cell']['$t']);
-		console.log(BackResult);
-		strongele.appendChild(cText);
+		var cText = document.createTextNode(BackResult.feed.entry[4]['gs$cell']['$t']+"11");
 		for(i = 0; i < BackResult.feed.entry[4]['gs$cell']['$t']; i++)
 			{				
-		span.appendChild(strongele);
+				
 			}
+		
+		console.log(BackResult);
+		strongele.appendChild(cText);
 	});
 
 	
