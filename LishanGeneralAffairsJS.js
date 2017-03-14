@@ -112,7 +112,7 @@ function delRow() { //刪除末列
 		format: "json"
 	}).done(function (data) {
 		console.log(data);
-		Ba	ckResult = data;
+		BackResult = data;
 		var cText = document.createTextNode(BackResult.feed.entry[4]['gs$cell']['$t']);
 		console.log(BackResult);
 		strongele.appendChild(cText);
