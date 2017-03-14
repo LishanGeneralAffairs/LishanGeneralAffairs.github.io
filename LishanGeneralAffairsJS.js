@@ -80,7 +80,7 @@ function getJSONP(url, success) {
 
 
 function GetInfo() {
-	var BackResult;
+	var BackResult = null;
 	var epaAPI = "https://spreadsheets.google.com/feeds/cells/1eWhg4Tbmmgjm2d8MRtvjvtrfvXFE67hBp8bRWNcijXs/1/public/values?alt=json&callback=?";
 	//加上&callback=?
 	$.getJSON(epaAPI, function () {
@@ -88,9 +88,10 @@ function GetInfo() {
 	}).done(function (data) {
 		console.log(data);
 
-		BackResult = jQuery.extend(true, {}, data);
-	console.log(BackResult);
-	return(data);
+		BackResult = jQuery.extend(true, {}, data.feed.entry.Something);
+		BackResult = data;
+		console.log(BackResult);
+		return (BackResult);
 	});
 }
 
@@ -102,11 +103,22 @@ function delRow() { //刪除末列
 	strongele.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #F00;");
 
 	var Check = "No";
-	var BackResult = GetInfo();
-	Check = BackResult.version;
-	var cText = document.createTextNode(Check);
-	strongele.appendChild(cText);
-	span.appendChild(strongele);
+	var BackResult = null;
+
+
+	var epaAPI = "https://spreadsheets.google.com/feeds/cells/1eWhg4Tbmmgjm2d8MRtvjvtrfvXFE67hBp8bRWNcijXs/1/public/values?alt=json&callback=?";
+	//加上&callback=?
+	$.getJSON(epaAPI, function () {
+		format: "json"
+	}).done(function (data) {
+		console.log(data);
+		Ba	ckResult = data;
+		var cText = document.createTextNode(BackResult.feed.entry[4]['gs$cell']['$t']);
+		console.log(BackResult);
+		strongele.appendChild(cText);
+		span.appendChild(strongele);
+	});
+
 }
 
 /*function delRow() { //刪除末列
