@@ -26,7 +26,7 @@ iframe {
 	border-left: #FFF 1px solid;
 	border-right: #FFF 1px solid;
 	border-bottom: 0px solid #666;
-	background: url("http://i.imgur.com/0ubA6Md.gif") repeat-x left bottom;
+	background: url("https://i.imgur.com/0ubA6Md.gif") repeat-x left bottom;
  *float:none;
 }
 #tabsF ul {
@@ -41,7 +41,7 @@ iframe {
 }
 #tabsF a {
 	float: left;
-	background: url("http://i.imgur.com/zcr4KXi.gif") no-repeat left top;
+	background: url("https://i.imgur.com/zcr4KXi.gif") no-repeat left top;
 	margin: 0;
 	padding: 0px 0 0 4px;
 	text-decoration: none;
@@ -50,13 +50,13 @@ iframe {
 #tabsF a span {
 	float: left;
 	display: block;
-	background: url("http://i.imgur.com/FWaS8yJ.gif") no-repeat right top;
+	background: url("https://i.imgur.com/FWaS8yJ.gif") no-repeat right top;
 	padding: 9px 15px 5px 6px;
 	color: #666;
 }
 #tabsF span {
 	float: left;
-	background: url("http://i.imgur.com/zcr4KXi.gif") no-repeat left top;
+	background: url("https://i.imgur.com/zcr4KXi.gif") no-repeat left top;
 	margin: 0;
 	padding: 4px 0 0 4px;
 	text-decoration: none;
@@ -64,7 +64,7 @@ iframe {
 #tabsF span span {
 	float: left;
 	display: block;
-	background: url("http://i.imgur.com/FWaS8yJ.gif") no-repeat right top;
+	background: url("https://i.imgur.com/FWaS8yJ.gif") no-repeat right top;
 	padding: 9px 15px 5px 6px;
 	color: #666;
 }
