@@ -98,32 +98,97 @@ function GetInfo() {
 }
 */
 
-function delRow() { //刪除末列
-
-	var span = document.getElementById('wtf');
-	var strongele = document.createElement('span');
-	strongele.setAttribute('id', "haha");
-	strongele.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #F00;");
-
+function LoadTable() { //刪除末列
 	var Check = "No";
 	var BackResult = null;
-
 
 	var epaAPI = "https://spreadsheets.google.com/feeds/cells/1eWhg4Tbmmgjm2d8MRtvjvtrfvXFE67hBp8bRWNcijXs/1/public/values?alt=json&callback=?";
 	//加上&callback=?
 	$.getJSON(epaAPI, function () {
 		format: "json";
 	}).done(function (data) {
-		console.log(data);
-		BackResult = data;
-		var cText = document.createTextNode(BackResult.feed.entry[4]['gs$cell']['$t']+"101");
-		console.log(BackResult);
-		strongele.appendChild(cText);
-  		span.appendChild(strongele);
-		
+			//紀錄LOG 
+			//console.log(data);
+			BackResult = data;
+			//var ResultText = BackResult.feed.entry[4]['gs$cell']['$t'] + "101";
+
+			for (i = 0; i < BackResult.feed.entry[4]['gs$cell']['$t'] / 2 + BackResult.feed.entry[4]['gs$cell']['$t'] % 2; i++) {
+				var num = document.getElementById("BusinessChargeTB").rows.length;
+				var TrPosition = document.getElementById("BusinessChargeTB").insertRow(num);
+				var TrName = document.getElementById("BusinessChargeTB").insertRow(num + 1);
+				var TrPhone = document.getElementById("BusinessChargeTB").insertRow(num + 2);
+				var TrBusiness = document.getElementById("BusinessChargeTB").insertRow(num + 3);
+				var TrBusinessDescription = document.getElementById("BusinessChargeTB").insertRow(num + 4);
+				var TrSpace = document.getElementById("BusinessChargeTB").insertRow(num + 5);
+				var TrSpaceTwo = document.getElementById("BusinessChargeTB").insertRow(num + 6);
+				var TrSpaceThree = document.getElementById("BusinessChargeTB").insertRow(num + 7);
+				var Check = 2;
+				if (i == BackResult.feed.entry[4]['gs$cell']['$t'] / 2 + BackResult.feed.entry[4]['gs$cell']['$t'] % 2){
+					Check = 1;
+			}
+			for (j = 0; j < Check; j++) {
+				var TdPosition = TrPosition.insertCell(TrPosition.cells.length);
+				TdPosition.setAttribute('align', "center");
+				var TdName = TrName.insertCell(TrName.cells.length);
+				TdName.setAttribute('align', "center");
+				var TdPhone = TrPhone.insertCell(TrPhone.cells.length);
+				TdPhone.setAttribute('align', "center");
+				var TdBusiness = TrBusiness.insertCell(TrBusiness.cells.length);
+				TdBusiness.setAttribute('align', "center");
+				var TdBusinessDescription = TrBusinessDescription.insertCell(TrBusinessDescription.cells.length);
+				TdBusinessDescription.setAttribute('align', "center");
+				var TdSpace = TrSpace.insertCell(TrSpace.cells.length);
+				TdSpace.setAttribute('align', "center");
+
+				var TdSpaceTwo = TrSpaceTwo.insertCell(TrSpaceTwo.cells.length);
+				TdSpaceTwo.setAttribute('align', "center");
+				TdSpaceTwo.innerHTML = '<br />';
+
+				var TdSpaceThree = TrSpaceThree.insertCell(TrSpaceThree.cells.length);
+				TdSpaceThree.setAttribute('align', "center");
+				TdSpaceThree.innerHTML = '<br />';
+
+				var SpanPosition = document.createElement('span');
+				SpanPosition.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #CC0000;");
+				var TextPosition = document.createTextNode(BackResult.feed.entry[5+i*8+j*4]['gs$cell']['$t']);
+				SpanPosition.appendChild(TextPosition);
+				TdPosition.appendChild(SpanPosition);
+
+				var SpanName = document.createElement('span');
+				SpanName.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #8B4513;");
+				var TextName = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+1]['gs$cell']['$t']);
+				SpanName.appendChild(TextName);
+				TdName.appendChild(SpanName);
+
+				var SpanPhone = document.createElement('span');
+				SpanPhone.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #000000;");
+				var TextPhone = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+2]['gs$cell']['$t']);
+				SpanPhone.appendChild(TextPhone);
+				TdPhone.appendChild(SpanPhone);
+
+				var SpanBusiness = document.createElement('span');
+				SpanBusiness.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #CC0000;");
+				var TextBusiness = document.createTextNode("承辦業務");
+				SpanBusiness.appendChild(TextBusiness);
+				TdBusiness.appendChild(SpanBusiness);
+
+				var SpanBusinessDescription = document.createElement('span');
+				SpanBusinessDescription.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #8B4513;");
+				var TextBusinessDescription = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t']);
+				SpanBusinessDescription.appendChild(TextBusinessDescription);
+				TdBusinessDescription.appendChild(SpanBusinessDescription);
+				
+			}
+		}
+		//var cText = document.createTextNode(ResultText);
+		//紀錄LOG 
+		//console.log(BackResult);
+		//strongele.appendChild(cText);
+		//span.appendChild(strongele);
+
 	});
 
-	
+
 }
 
 /*function delRow() { //刪除末列
