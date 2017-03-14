@@ -24,6 +24,7 @@ function GetInfo {
 	span.appendChild(cText);
 }
 */
+/*
 function addRow() { //增加一列
 	var num = 1; //設定"列"計數器
 
@@ -60,10 +61,11 @@ function addRow() { //增加一列
 	}
 
 }
-
+*/
+/*
 function getJSONP(url, success) {
 
-	var ud = '_' + +new Date,
+	var ud = '_' + new Date,
 		script = document.createElement('script'),
 		head = document.getElementsByTagName('head')[0] ||
 		document.documentElement;
@@ -84,7 +86,7 @@ function GetInfo() {
 	var epaAPI = "https://spreadsheets.google.com/feeds/cells/1eWhg4Tbmmgjm2d8MRtvjvtrfvXFE67hBp8bRWNcijXs/1/public/values?alt=json&callback=?";
 	//加上&callback=?
 	$.getJSON(epaAPI, function () {
-		format: "json"
+		format: "json";
 	}).done(function (data) {
 		console.log(data);
 
@@ -94,6 +96,7 @@ function GetInfo() {
 		return (BackResult);
 	});
 }
+*/
 
 function delRow() { //刪除末列
 
@@ -109,7 +112,7 @@ function delRow() { //刪除末列
 	var epaAPI = "https://spreadsheets.google.com/feeds/cells/1eWhg4Tbmmgjm2d8MRtvjvtrfvXFE67hBp8bRWNcijXs/1/public/values?alt=json&callback=?";
 	//加上&callback=?
 	$.getJSON(epaAPI, function () {
-		format: "json"
+		format: "json";
 	}).done(function (data) {
 		console.log(data);
 		BackResult = data;
@@ -119,6 +122,7 @@ function delRow() { //刪除末列
 		span.appendChild(strongele);
 	});
 
+	
 }
 
 /*function delRow() { //刪除末列
