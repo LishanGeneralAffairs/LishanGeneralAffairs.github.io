@@ -213,12 +213,12 @@ function LoadTable() { //刪除末列
 		for (i = 0; i < BackResult.feed.entry[4]['gs$cell']['$t']; i++) {
 			var num = document.getElementById("BusinessChargeTB").rows.length;
 			var TrSpaceFirst = document.getElementById("BusinessChargeTB").insertRow(num);
-			var TrPerson = document.getElementById("BusinessChargeTB").insertRow(num+1);
+			var TrPerson = document.getElementById("BusinessChargeTB").insertRow(num + 1);
 			var TrSpace = document.getElementById("BusinessChargeTB").insertRow(num + 2);
 			var TrSpaceTwo = document.getElementById("BusinessChargeTB").insertRow(num + 3);
 			var TrSpaceThree = document.getElementById("BusinessChargeTB").insertRow(num + 4);
-			var TdPositionNamePhone = TrPerson.insertCell(TrPerson.cells.length);
-			TdPositionNamePhone.setAttribute('align', "center");
+			var TdPositionName = TrPerson.insertCell(TrPerson.cells.length);
+			TdPositionName.setAttribute('align', "center");
 			var TdBusinessDescription = TrPerson.insertCell(TrPerson.cells.length);
 			TdBusinessDescription.setAttribute('align', "left");
 			var TdSpace = TrSpace.insertCell(TrSpace.cells.length);
@@ -228,20 +228,25 @@ function LoadTable() { //刪除末列
 			TdSpaceTwo.setAttribute('align', "center");
 			TdSpaceTwo.innerHTML = '<br />';
 
-			
+
 			var TdSpaceFirst = TrSpaceFirst.insertCell(TrSpaceFirst.cells.length);
 			TdSpaceFirst.setAttribute('align', "center");
 			TdSpaceFirst.innerHTML = '<br />';
 
-			var SpanPositionNamePhone = document.createElement('span');
-			SpanPositionNamePhone.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #CC0000;");
-			var TextPositionNamePhone = BackResult.feed.entry[5 + i * 4]['gs$cell']['$t'] + "<br />" + BackResult.feed.entry[5 + i * 4 + 1]['gs$cell']['$t'] + "<br />" + BackResult.feed.entry[5 + i * 4 + 2]['gs$cell']['$t'];
-			SpanPositionNamePhone.innerHTML = '' + TextPositionNamePhone;
-			TdPositionNamePhone.appendChild(SpanPositionNamePhone);
+			var SpanPositionName = document.createElement('span');
+			SpanPositionName.setAttribute('style', "font-size: 18px; font-family: 標楷體;");
+			var TextPositionName = BackResult.feed.entry[5 + i * 4]['gs$cell']['$t'] + "<br />" + BackResult.feed.entry[5 + i * 4 + 1]['gs$cell']['$t'];
+			SpanPositionName.innerHTML = TextPositionName;
+			var SpanPhone = document.createElement('span');
+			SpanPhone.setAttribute('style', "font-size: 14px; font-family: 標楷體;");
+			var TextPhone = "<br />" + BackResult.feed.entry[5 + i * 4 + 2]['gs$cell']['$t'];
+			SpanPhone.innerHTML = TextPhone;
+			TdPositionName.appendChild(SpanPositionName);
+			TdPositionName.appendChild(SpanPhone);
 
 
 			var SpanBusinessDescription = document.createElement('span');
-			SpanBusinessDescription.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #8B4513;");
+			SpanBusinessDescription.setAttribute('style', "font-size: 16px; font-family: 標楷體;");
 			//var TextBusinessDescription = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t']);
 			//SpanBusinessDescription.appendChild(TextBusinessDescription);
 			var TextBusinessDescription = BackResult.feed.entry[5 + i * 4 + 3]['gs$cell']['$t'].replace(/\n/g, "<br />");
