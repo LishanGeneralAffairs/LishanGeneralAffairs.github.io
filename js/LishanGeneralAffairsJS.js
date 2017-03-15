@@ -212,10 +212,11 @@ function LoadTable() { //刪除末列
 
 		for (i = 0; i < BackResult.feed.entry[4]['gs$cell']['$t']; i++) {
 			var num = document.getElementById("BusinessChargeTB").rows.length;
-			var TrPerson = document.getElementById("BusinessChargeTB").insertRow(num);
-			var TrSpace = document.getElementById("BusinessChargeTB").insertRow(num + 1);
-			var TrSpaceTwo = document.getElementById("BusinessChargeTB").insertRow(num + 2);
-			var TrSpaceThree = document.getElementById("BusinessChargeTB").insertRow(num + 3);
+			var TrSpaceFirst = document.getElementById("BusinessChargeTB").insertRow(num);
+			var TrPerson = document.getElementById("BusinessChargeTB").insertRow(num+1);
+			var TrSpace = document.getElementById("BusinessChargeTB").insertRow(num + 2);
+			var TrSpaceTwo = document.getElementById("BusinessChargeTB").insertRow(num + 3);
+			var TrSpaceThree = document.getElementById("BusinessChargeTB").insertRow(num + 4);
 			var TdPositionNamePhone = TrPerson.insertCell(TrPerson.cells.length);
 			TdPositionNamePhone.setAttribute('align', "center");
 			var TdBusinessDescription = TrPerson.insertCell(TrPerson.cells.length);
@@ -227,9 +228,10 @@ function LoadTable() { //刪除末列
 			TdSpaceTwo.setAttribute('align', "center");
 			TdSpaceTwo.innerHTML = '<br />';
 
-			var TdSpaceThree = TrSpaceThree.insertCell(TrSpaceThree.cells.length);
-			TdSpaceThree.setAttribute('align', "center");
-			TdSpaceThree.innerHTML = '<br />';
+			
+			var TdSpaceFirst = TrSpaceFirst.insertCell(TrSpaceFirst.cells.length);
+			TdSpaceFirst.setAttribute('align', "center");
+			TdSpaceFirst.innerHTML = '<br />';
 
 			var SpanPositionNamePhone = document.createElement('span');
 			SpanPositionNamePhone.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #CC0000;");
