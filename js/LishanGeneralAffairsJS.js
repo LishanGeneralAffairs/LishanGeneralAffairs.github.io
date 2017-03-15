@@ -98,6 +98,8 @@ function GetInfo() {
 }
 */
 
+//old one
+/*
 function LoadTable() { //刪除末列
 	var Check = "No";
 	var BackResult = null;
@@ -192,6 +194,70 @@ function LoadTable() { //刪除末列
 
 
 }
+*/
+
+function LoadTable() { //刪除末列
+	var Check = "No";
+	var BackResult = null;
+
+	var epaAPI = "https://spreadsheets.google.com/feeds/cells/1eWhg4Tbmmgjm2d8MRtvjvtrfvXFE67hBp8bRWNcijXs/1/public/values?alt=json&callback=?";
+	//加上&callback=?
+	$.getJSON(epaAPI, function () {
+		format: "json";
+	}).done(function (data) {
+		//紀錄LOG 
+		//console.log(data);
+		BackResult = data;
+		//var ResultText = BackResult.feed.entry[4]['gs$cell']['$t'] + "101";
+
+		for (i = 0; i < BackResult.feed.entry[4]['gs$cell']['$t']; i++) {
+			var num = document.getElementById("BusinessChargeTB").rows.length;
+			var TrPerson = document.getElementById("BusinessChargeTB").insertRow(num);
+			var TrSpace = document.getElementById("BusinessChargeTB").insertRow(num + 1);
+			var TrSpaceTwo = document.getElementById("BusinessChargeTB").insertRow(num + 2);
+			var TrSpaceThree = document.getElementById("BusinessChargeTB").insertRow(num + 3);
+			var TdPositionNamePhone = TrPerson.insertCell(TrPerson.cells.length);
+			TdPositionNamePhone.setAttribute('align', "center");
+			var TdBusinessDescription = TrPerson.insertCell(TrPerson.cells.length);
+			TdBusinessDescription.setAttribute('align', "left");
+			var TdSpace = TrSpace.insertCell(TrSpace.cells.length);
+			TdSpace.setAttribute('align', "center");
+
+			var TdSpaceTwo = TrSpaceTwo.insertCell(TrSpaceTwo.cells.length);
+			TdSpaceTwo.setAttribute('align', "center");
+			TdSpaceTwo.innerHTML = '<br />';
+
+			var TdSpaceThree = TrSpaceThree.insertCell(TrSpaceThree.cells.length);
+			TdSpaceThree.setAttribute('align', "center");
+			TdSpaceThree.innerHTML = '<br />';
+
+			var SpanPositionNamePhone = document.createElement('span');
+			SpanPositionNamePhone.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #CC0000;");
+			var TextPositionNamePhone = BackResult.feed.entry[5 + i * 4]['gs$cell']['$t'] + "<br />" + BackResult.feed.entry[5 + i * 4 + 1]['gs$cell']['$t'] + "<br />" + BackResult.feed.entry[5 + i * 4 + 2]['gs$cell']['$t'];
+			SpanPositionNamePhone.innerHTML = '' + TextPositionNamePhone;
+			TdPositionNamePhone.appendChild(SpanPositionNamePhone);
+
+
+			var SpanBusinessDescription = document.createElement('span');
+			SpanBusinessDescription.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #8B4513;");
+			//var TextBusinessDescription = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t']);
+			//SpanBusinessDescription.appendChild(TextBusinessDescription);
+			var TextBusinessDescription = BackResult.feed.entry[5 + i * 4 + 3]['gs$cell']['$t'].replace(/\n/g, "<br />");
+			SpanBusinessDescription.innerHTML = '' + TextBusinessDescription;
+			TdBusinessDescription.appendChild(SpanBusinessDescription);
+
+		}
+		//var cText = document.createTextNode(ResultText);
+		//紀錄LOG 
+		//console.log(BackResult);
+		//strongele.appendChild(cText);
+		//span.appendChild(strongele);
+
+	});
+
+
+}
+
 
 /*function delRow() { //刪除末列
 
