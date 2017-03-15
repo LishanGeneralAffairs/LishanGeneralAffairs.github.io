@@ -219,7 +219,7 @@ function LoadTable() { //刪除末列
 			var TrSpaceThree = document.getElementById("BusinessChargeTB").insertRow(num + 4);
 			var TdPositionName = TrPerson.insertCell(TrPerson.cells.length);
 			TdPositionName.setAttribute('align', "center");
-			TdPositionName.setAttribute('width', "250px");
+			TdPositionName.setAttribute('width', "200px");
 			var TdBusinessDescription = TrPerson.insertCell(TrPerson.cells.length);
 			TdBusinessDescription.setAttribute('align', "left");
 			var TdSpace = TrSpace.insertCell(TrSpace.cells.length);
