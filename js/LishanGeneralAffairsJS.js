@@ -174,8 +174,10 @@ function LoadTable() { //刪除末列
 
 				var SpanBusinessDescription = document.createElement('span');
 				SpanBusinessDescription.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體; color: #8B4513;");
-				var TextBusinessDescription = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t']);
-				SpanBusinessDescription.appendChild(TextBusinessDescription);
+				//var TextBusinessDescription = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t']);
+				//SpanBusinessDescription.appendChild(TextBusinessDescription);
+				var TextBusinessDescription = BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t'].replace(/\n/g, "<br />");
+				SpanBusinessDescription.innerHTML = ''+TextBusinessDescription;
 				TdBusinessDescription.appendChild(SpanBusinessDescription);
 				
 			}
