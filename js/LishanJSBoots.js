@@ -235,11 +235,11 @@ function LoadTable() { //刪除末列
 			TdSpaceFirst.innerHTML = '<br />';
 
 			var SpanPositionName = document.createElement('span');
-			SpanPositionName.setAttribute('style', "font-size: 18px; font-family: 標楷體;");
+			SpanPositionName.setAttribute('style', "font-size: 18px; font-family: 微軟正黑體;");
 			var TextPositionName = BackResult.feed.entry[5 + i * 4]['gs$cell']['$t'] + "<br />" + BackResult.feed.entry[5 + i * 4 + 1]['gs$cell']['$t'];
 			SpanPositionName.innerHTML = TextPositionName;
 			var SpanPhone = document.createElement('span');
-			SpanPhone.setAttribute('style', "font-size: 14px; font-family: 標楷體;");
+			SpanPhone.setAttribute('style', "font-size: 14px; font-family: 微軟正黑體;");
 			var TextPhone = "<br />" + BackResult.feed.entry[5 + i * 4 + 2]['gs$cell']['$t'];
 			SpanPhone.innerHTML = TextPhone;
 			TdPositionName.appendChild(SpanPositionName);
@@ -247,7 +247,7 @@ function LoadTable() { //刪除末列
 
 
 			var SpanBusinessDescription = document.createElement('span');
-			SpanBusinessDescription.setAttribute('style', "font-size: 16px; font-family: 標楷體;");
+			SpanBusinessDescription.setAttribute('style', "font-size: 16px; font-family: 微軟正黑體;");
 			//var TextBusinessDescription = document.createTextNode(BackResult.feed.entry[5+i*8+j*4+3]['gs$cell']['$t']);
 			//SpanBusinessDescription.appendChild(TextBusinessDescription);
 			var TextBusinessDescription = BackResult.feed.entry[5 + i * 4 + 3]['gs$cell']['$t'].replace(/\n/g, "<br />");
