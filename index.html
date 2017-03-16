@@ -2,7 +2,7 @@
 <html lang="zh_TW">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>梨山國小總務處</title>
 <!-- Bootstrap -->
@@ -15,7 +15,10 @@
 		 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body onLoad="LoadTable()" bgcolor="transparent">
+<body onLoad="LoadTable()">
+  <style type="text/css">
+    body { background: #F6F3E3 !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+  </style>
   <script src="lib/bootstrap-3.3.6-dist/dist/js/jquery.min.js"></script>
   <script src="lib/bootstrap-3.3.6-distdist/js/bootstrap.js"></script>
   <script type="text/javascript" src="js/LishanJSBoots.js"></script>
