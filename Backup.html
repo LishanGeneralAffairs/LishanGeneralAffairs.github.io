@@ -2,18 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>無標題文件11</title>
+<title>梨山國小總務處</title>
 </head>
-<body><!--
+<body onLoad="LoadTable()">
+  <!--
   <style type="text/css">
     @import url(https://rawgit.com/IsaacRice/LishanGeneralAffairs/master/LishanGeneralAffairsCSS.css);
   </style>
   <script type="text/javascript" src="https://rawgit.com/IsaacRice/LishanGeneralAffairs/master/LishanGeneralAffairsJS.js"></script>-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <style type="text/css">
-    @import url(LishanGeneralAffairsCSS.css);
+	@import url(css/LishanGeneralAffairsCSS.css);
   </style>
-  <script type="text/javascript" src="LishanGeneralAffairsJS.js"></script>
+  <script type="text/javascript" src="js/LishanGeneralAffairsJS.js"></script>
   
   <!-- 這邊設定table的id 讓javascript用 -->
   <div id="tabsF">
@@ -37,68 +38,10 @@
   </div>
   <div id="tabsC">
     <div id="S1" style="display:inline;">
-      <table id="BusinessChargeTB" width="80%" border="0" rules="all" align="center">
-        <tr align="center">
-          <td><strong><span style="font-size:18px;font-family:微軟正黑體;color:#CC0000;">總務主任</span></strong></td>
-          <td><strong><span style="font-size:18px;font-family:微軟正黑體;color:#CC0000;">文書兼出納組長</span></strong></td>
-        </tr>
-        <tr align="center">
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #8B4513;">邱蘭芬</span></strong></td>
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #8B4513;">李方玲</span></strong></td>
-        </tr>
-        <tr align="center">
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #000000;">(04)25981510轉218</span></strong></td>
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #000000;">(04)25981510轉217</span></strong></td>
-        </tr>
-        <!--<tr align="center">
-        <td><img alt="" src="http://i.imgur.com/aGrYFaM.jpg" style="width: 300px;" /></td>
-        <td><img alt="" src="/assets/image/wo.png" style="width: 300px;" /></td>
-      </tr>-->
-        <tr align="center">
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #CC0000;">承辦業務</span></strong></td>
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #CC0000;">承辦業務</span></strong></td>
-        </tr>
-        <tr align="center">
-          <td></td>
-          <td></td>
-        </tr>
-        <tr align="center">
-          <td></td>
-          <td><br /></td>
-        </tr>
-        <tr align="center">
-          <td></td>
-          <td><br /></td>
-        </tr>
-        <tr align="center">
-          <td><strong><span style="font-size:18px;font-family:微軟正黑體;color:#CC0000;">事務組長</span></strong></td>
-          <td><strong><span style="font-size:18px;font-family:微軟正黑體;color:#CC0000;">幹事</span></strong></td>
-        </tr>
-        <tr align="center">
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #8B4513;">張文瑜</span></strong></td>
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #8B4513;">陳宜廷</span></strong></td>
-        </tr>
-        <tr align="center">
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #000000;">(04)25981510轉217</span></strong></td>
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #000000;">(04)25981510轉216</span></strong></td>
-        </tr>
-        <!--<tr align="center">
-        <td><img alt="" src="/assets/image/wo.png" style="width: 300px;" /></td>
-        <td><img alt="" src="/assets/image/wo.png" style="width: 300px;" /></td>
-      </tr>-->
-        <tr align="center">
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #CC0000;">承辦業務</span></strong></td>
-          <td><strong><span style="font-size: 18px; font-family: 微軟正黑體; color: #CC0000;">承辦業務</span></strong></td>
-        </tr>
-        <tr align="center">
-          <td></td>
-          <td></td>
-        </tr>
-        <tr align="center">
-          <td></td>
-          <td><br /></td>
-        </tr>
+      <strong>
+      <table id="BusinessChargeTB" width="90%" border="0" rules="none" align="left">
       </table>
+      </strong>
     </div>
     <div id="S2" style="display:none;">
       <p align="center">
@@ -114,6 +57,7 @@
       <iframe src="https://docs.google.com/spreadsheets/d/1Tc_hCkscAvRccZRF1xFL6k_Q32BFoanbgPzHE2tK6JY/pubhtml?gid=353969925&amp;single=true&amp;widget=true&amp;headers=false" width="760" height="400" ></iframe>
     </div>
   </div>
+  <!--
   <a href="javascript:\\" onclick="add_new_data()">
     新增表格測試鈕
   </a>
@@ -125,15 +69,6 @@
       <th id="wtf">測試文字</th>
     </tr>
   </table>
-</body>
-</html>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>無標題文件</title>
-</head>
-
-<body>
+  -->
 </body>
 </html>
