@@ -266,6 +266,19 @@ function LoadTable() { //刪除末列
 
 }
 
+function SetCwinHeight() {
+	var iframeid = document.getElementById("mainframe"); //iframe id
+	if (document.getElementById) {
+		if (iframeid && !window.opera) {
+			if (iframeid.contentDocument && iframeid.contentDocument.body.offsetHeight) {
+				iframeid.height = iframeid.contentDocument.body.offsetHeight;
+			} else if (iframeid.Document && iframeid.Document.body.scrollHeight) {
+				iframeid.height = iframeid.Document.body.scrollHeight;
+			}
+		}
+	}
+}
+
 
 /*function delRow() { //刪除末列
 
